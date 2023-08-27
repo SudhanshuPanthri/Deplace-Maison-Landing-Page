@@ -44,11 +44,23 @@ init();
 
 circleFollowsMouse();
 
+let rolltl = gsap.timeline();
+
+rolltl
+  .from("#roll-up", {
+    opacity: 0,
+    y: "0%",
+  })
+  .to("#roll-up", {
+    opacity: 1,
+    y: "-100%",
+    duration: 1,
+  });
+
 let tl = gsap.timeline({
   scrollTrigger: {
     trigger: "#page1 h1",
     scroller: "#main",
-    // markers: true,
     start: "top 13%",
     end: "top 50%",
     scrub: 3,
@@ -58,12 +70,22 @@ let tl = gsap.timeline({
 let tl2 = gsap.timeline();
 
 tl2
-  .from("#page1 h1", {
+  .from("#page1>h1", {
+    y: 200,
+    opacity: 0,
+    duration: 2,
+  })
+  .to("#page1>h1", {
+    y: -100,
+    opacity: 1,
+    ease: "Power4.easeOut",
+  })
+  .from("#page1>h3", {
     y: 200,
     opacity: 0,
   })
-  .to("#page1 h1", {
-    y: -100,
+  .to("#page1>h3", {
+    y: 0,
     opacity: 1,
   })
   .from("#page1 h2", {
@@ -81,6 +103,7 @@ tl2
   .to("#page1 #img-container>img", {
     y: 0,
     opacity: 1,
+    ease: "Power4.easeOut",
   });
 
 tl.to("#page1 #img-container>img", {
@@ -91,7 +114,7 @@ let tl3 = gsap.timeline({
   scrollTrigger: {
     trigger: "#page2 #p2-content h1",
     scroller: "#main",
-    markers: true,
+    // markers: true,
     start: "top 103%",
     end: "top 50%",
     scrub: 3,
