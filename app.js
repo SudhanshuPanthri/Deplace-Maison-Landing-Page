@@ -48,7 +48,7 @@ let rolltl = gsap.timeline();
 
 rolltl
   .from("#roll-up", {
-    opacity: 0,
+    opacity: 1,
     y: "0%",
   })
   .to("#roll-up", {
