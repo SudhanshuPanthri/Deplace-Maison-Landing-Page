@@ -3,3 +3,6 @@
 <h2>Screenshots</h2>
 <img src="./image.png" alt="PAGE 1" />
 <img src="./image-1.png" alt="PAGE 2" />
+
+<h1>Live Website Preview 😶‍🌫️</h1>
+<h2>https://deplacemaisongsap.netlify.app/</h2>
